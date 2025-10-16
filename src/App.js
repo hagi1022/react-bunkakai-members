@@ -22,16 +22,18 @@ export default function TeamMembers() {
           </button>
         </div>
 
-        {selectedTeam && (
-          <div style={{ marginTop: '30px' }}>
-            <h2>{selectedTeam === 'cat' ? '🐱 猫チーム' : '🐶 犬チーム'}</h2>
-            <ul style={{ listStyle: 'none', padding: 0 }}>
-              {teams[selectedTeam].map((member, index) => (
-                <li key={index} style={{ margin: '10px 0' }}>{member}</li>
-              ))}
-            </ul>
-          </div>
-        )}
+        <div style={{ marginTop: '30px', minHeight: '250px' }}>
+          {selectedTeam && (
+            <div>
+              <h2>{selectedTeam === 'cat' ? '🐱 猫チーム' : '🐶 犬チーム'}</h2>
+              <ul style={{ listStyle: 'none', padding: 0 }}>
+                {teams[selectedTeam].map((member, index) => (
+                  <li key={index} style={{ margin: '10px 0' }}>{member}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
